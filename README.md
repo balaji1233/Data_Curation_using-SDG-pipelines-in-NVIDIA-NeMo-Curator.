@@ -1,2 +1,2 @@
 # Nvdia_Tech_Experimentation
-Using Nvdia Techstack for simplyfyinh ML 
+Using Nvdia Techstack for simplyfying ML 
