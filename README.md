@@ -1,13 +1,13 @@
 # Curating Datasets for Parameter Efficient Fine-tuning with Synthetic Data Generation
 
-This tutorial demonstrates the usage of NeMo Curator's Python API data curation as well as synthetic
+This project demonstrates the usage of NeMo Curator's Python API data curation as well as synthetic
 data generation, and qualitative score assignment to prepare a dataset for parameter-efficient fine-tuning (PEFT) of LLMs.
 
 We demonstrate the pipeline using the [Law StackExchange dataset](https://huggingface.co/datasets/ymoslem/Law-StackExchange),
 which is a dataset of legal question/answers. Each record consists of a question, some context as
 well as human-provided answers.
 
-In this tutorial, we implement various filtering and processing operations on the records. We then
+In this project , we implement various filtering and processing operations on the records. We then
 demonstrate the usage of external LLM services for synthetic data generation and reward models to
 assign qualitative metrics to each synthetic record. We further use NeMo Curator's facilities
 to iteratively augment and refine the data until the dataset has reached the desired size.
@@ -18,7 +18,7 @@ to iteratively augment and refine the data until the dataset has reached the des
 
 ## Overview of the Pipeline
 
-The pipeline for this tutorial aims to demonstrate a basic loop with two stages as follows. These stages are repeated until the desired dataset size is achieved:
+The pipeline for this project aims to demonstrate a basic loop with two stages as follows. These stages are repeated until the desired dataset size is achieved:
 
 1. **Data processing**: perform operations such as HTML tag cleaning, quality-based filtering and semantic deduplication on the records.
 2. **Synthetic data generation**: query a synthetic data generation model (such as [LLaMa 3.1 405B Instruct](https://build.nvidia.com/meta/llama-3_1-405b-instruct), or [Nemotron-4 340B Instruct](https://build.nvidia.com/nvidia/nemotron-4-340b-instruct)) to produce synthetic variants of existing records. Each synthetic record is then fed to a reward model (such as [Nemotron-4 340B Reward](https://build.nvidia.com/nvidia/nemotron-4-340b-reward)), and assigned a quality score. All records are then fed to the data processing stage for further processing.
@@ -93,7 +93,7 @@ python tutorials/peft-curation-with-sdg/main.py \
     --device gpu
 ```
 
-By default, this tutorial will use at most 8 workers to run the curation pipeline. If you face any
+By default, this project will use at most 8 workers to run the curation pipeline. If you face any
 out of memory issues, you can reduce the number of workers by supplying the `--n-workers=N` argument,
 where `N` is the number of workers to spawn.
 
